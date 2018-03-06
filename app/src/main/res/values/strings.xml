@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">"FunkyPod"</string>
+    <string name="action_settings">Settings</string>
+    <string name="showPlaylist">Show Playlist</string>
+    <string name="title_activity_playlist">playlist</string>
+    <string name="title_activity_view_playlist">ViewPlaylist</string>
+    <string name="title_activity_more_info">MoreInfo</string>
+</resources>

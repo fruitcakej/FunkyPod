@@ -1,0 +1,48 @@
+<!-- Layout for a single list item -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:padding="@dimen/list_items">
+
+    <!--<ImageView-->
+        <!--android:id="@+id/list_item_icon"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"/>-->
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/list"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/list_items"
+        android:paddingRight="@dimen/list_items">
+
+        <TextView
+            android:id="@+id/mixName"
+            android:textColor="@color/mixName"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/info"
+            android:textColor="@color/infoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"/>
+
+        <TextView
+            android:id="@+id/artistName"
+            android:textColor="@color/artistName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android.funkypod.MainActivity">
+    <item
+        android:id="@+id/showPlaylistIcon"
+        android:title="@string/showPlaylist"
+        android:icon="@mipmap/ic_queue_music_white_24dp"
+        app:showAsAction="always" />
+
+
+</menu>

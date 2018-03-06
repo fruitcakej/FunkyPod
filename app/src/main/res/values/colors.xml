@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="lGrey">#212121</color>
+    <color name="list">#6d6d6d</color>
+    <color name="mixName">#cfcfcf</color>
+    <color name="artistName">#a4a4a4</color>
+    <color name="infoText">#efefef</color>
+</resources>
