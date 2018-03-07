@@ -25,23 +25,34 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Mixes> availableMixes = new ArrayList<Mixes>();
         availableMixes.add(new Mixes("The Story So Far Part 1", "Scratchmaster Dee",
                 "This beautiful mix from Scratchmaster Dee will take you on an actual journey." +
-                        " Elegantly chosen tracks come together beautifully to form this classic house mix"));
+                        " Elegantly chosen tracks come together beautifully to form this classic house mix",
+                R.drawable.dee));
 
         availableMixes.add(new Mixes("House of Uxbridge!", "DJ Jamie C & DJ Phatman",
                 "The last mix to be recorded with DJ Phatman before his unfortunate death in 2016." +
-                        " This is just a random put together of tracks after a few drinks! "));
+                        " This is just a random put together of tracks after a few drinks!",
+                R.drawable.jcsi));
+
+        availableMixes.add(new Mixes("House Mix Jan 09", "Jamie C & Scratchmaster Dee",
+                "This mix was recorded while Jamie and Dee were working the London circit 3 nights a week." +
+                        " a belend of commercial house tracks to keep you dancing!", R.drawable.jcdee));
 
         availableMixes.add(new Mixes("Winter Chill 2006", "DJ Phil Hewson",
                 "An old classic mix from a great London House DJ. Full of classic disco tracks" +
-                        " and some remixes. A cracking mix to play loud when you're out driving!"));
+                        " and some remixes. A cracking mix to play loud when you're out driving!",
+                R.drawable.winterchill));
 
         availableMixes.add(new Mixes("Welcome Home", "K.D.S.",
                 "On this year 2017 there was a lot of movement and this is only the beginning, " +
                         "this mix should have been recorded a year ago, however I added during my travels" +
                         " all the influences that was important to me." +
                         " So I give you a summary of my travels and meetings last year." +
-                        " And the more years pass, the more enriching they are."));
+                        " And the more years pass, the more enriching they are.", R.drawable.kdswh));
 
+        availableMixes.add(new Mixes("Deep In Love (Nu Disco - Deep House Set)",
+                "Ahmet Kılıç", "The deep house sounds from this mix are hypnotic," +
+                " you'll find some tracks in this that are recognisable and deep. " +
+                " Perfect for chillin' out. Beautifully mixed for you. Enjoy!", R.drawable.dil));
 
         // Create an {@link MixAdapterAdapter}, whose data source is a list of
         // {@link Mix'}s. The adapter knows how to create list item views for each item

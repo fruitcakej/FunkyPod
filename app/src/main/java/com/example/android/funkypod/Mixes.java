@@ -15,6 +15,9 @@ public class Mixes {
     /** String for Info for the Podcast/Mix */
     private String mInfo;
 
+    // Drawable resource ID
+    private int mImageResourceId;
+
     /**
      * Create a new Mix object.
      *
@@ -22,10 +25,11 @@ public class Mixes {
      * @param artistName is the name of the artist / group who created the podcast / mix
      * @param info is the information about the mix / podcast
      */
-    public Mixes(String mixName, String artistName, String info) {
+    public Mixes(String mixName, String artistName, String info, int imageResourceId) {
         mMixName = mixName;
         mArtistName = artistName;
         mInfo = info;
+        mImageResourceId = imageResourceId;
     }
 
     /**
@@ -47,6 +51,13 @@ public class Mixes {
      */
     public String getInfo() {
         return mInfo;
+    }
+
+    /**
+     * Get the image resource ID
+     */
+    public int getImageResourceId() {
+        return mImageResourceId;
     }
 }
 

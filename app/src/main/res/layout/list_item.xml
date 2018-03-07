@@ -8,10 +8,12 @@
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:padding="@dimen/list_items">
 
-    <!--<ImageView-->
-        <!--android:id="@+id/list_item_icon"-->
-        <!--android:layout_width="50dp"-->
-        <!--android:layout_height="50dp"/>-->
+    <ImageView
+        android:id="@+id/mix_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:paddingRight="@dimen/list_items"
+        android:scaleType="fitXY"/>
 
     <LinearLayout
         android:layout_width="0dp"

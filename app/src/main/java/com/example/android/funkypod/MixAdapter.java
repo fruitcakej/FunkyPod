@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.android.funkypod.Mixes;
@@ -61,26 +62,32 @@ public class MixAdapter extends ArrayAdapter<Mixes> {
         // Get the {@link mixes} object located at this position in the list
         Mixes mixes = getItem(position);
 
-        // Find the TextView in the mixes.xml layout with the mix name text view
+        // Find the TextView in the list_item.xml layout with the mix name text view
         TextView mixNameTextView = (TextView) listItemView.findViewById(R.id.mixName);
 
         // Get the mix name from com.example.android.funkypod.Mixes object
         // set this text on the mixname TextView
         mixNameTextView.setText(mixes.getMixName());
 
-        // Find the TextView in the mixes.xml layout with the artist text view
+        // Find the TextView in the list_item.xml layout with the artist text view
         TextView artistNameTextView = (TextView) listItemView.findViewById(R.id.artistName);
 
         // Get the artist name from com.example.android.funkypod.Mixes object
         // set this text on the artistname TextView
        artistNameTextView.setText(mixes.getArtistName());
 
-        // Find the TextView in the mixes.xml layout with the info text view
+        // Find the TextView in the list_item.xml layout with the info text view
         TextView infoTextView = (TextView) listItemView.findViewById(R.id.info);
 
         // Get the info from com.example.android.funkypod.Mixes object
         // set this text on the info TextView
         infoTextView.setText(mixes.getInfo());
+
+        // Find the ImageView in the list_item.xml layout with the ID mix_icon
+        ImageView iconView = (ImageView) listItemView.findViewById(R.id.mix_icon);
+        // Get the image resource ID from com.example.android.funkypod.Mixes object and
+        // set the image to iconView
+        iconView.setImageResource(mixes.getImageResourceId());
 
         return listItemView;
     }
