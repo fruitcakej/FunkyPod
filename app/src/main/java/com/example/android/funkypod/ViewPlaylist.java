@@ -19,6 +19,7 @@ public class ViewPlaylist extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Playlist");
+
     }
 
     @Override
@@ -41,6 +42,17 @@ public class ViewPlaylist extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    /* Code to hide the playlist icon when actually in the playlist activity
+    */
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+        if (menu.findItem(R.id.showPlaylistIcon) != null)
+            menu.findItem(R.id.showPlaylistIcon).setVisible(false);
+        return true;
     }
 
 }

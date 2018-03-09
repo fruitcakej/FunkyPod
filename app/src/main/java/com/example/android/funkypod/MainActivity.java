@@ -1,13 +1,14 @@
 package com.example.android.funkypod;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,24 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(null);
+
+        // Find the View that shows the data we require.
+        TextView infoTextView = (TextView) findViewById(R.id.info);
+
+        // Set a click listener on view
+        if (infoTextView != null)
+            infoTextView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    Intent moreInfoIntent = new Intent(MainActivity.this, MoreInfo.class);
+                    startActivity(moreInfoIntent);
+
+
+
+                }
+            });
+
 
         // Create an arraylist of the available mixes / podcasts available
         ArrayList<Mixes> availableMixes = new ArrayList<Mixes>();
@@ -81,9 +100,12 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.showPlaylistIcon) {
+            startActivity(new Intent(this, ViewPlaylist.class));
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
