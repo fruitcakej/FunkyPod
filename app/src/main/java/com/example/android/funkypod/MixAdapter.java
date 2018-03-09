@@ -10,9 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.android.funkypod.Mixes;
-import com.example.android.funkypod.R;
-
 import java.util.ArrayList;
 
 /**
@@ -85,6 +82,7 @@ public class MixAdapter extends ArrayAdapter<Mixes> {
 
         // Find the ImageView in the list_item.xml layout with the ID mix_icon
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.mix_icon);
+
         // Get the image resource ID from com.example.android.funkypod.Mixes object and
         // set the image to iconView
         iconView.setImageResource(mixes.getImageResourceId());

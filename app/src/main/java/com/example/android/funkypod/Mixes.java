@@ -1,20 +1,30 @@
 package com.example.android.funkypod;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Jamie C on 05/03/2018.
  */
 
-public class Mixes {
+public class Mixes implements Parcelable{
+
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public Mixes createFromParcel(Parcel in) {
+            return new Mixes(in);
+        }
+
+        public Mixes[] newArray(int size) {
+            return new Mixes[size];
+        }
+    };
 
     /** String for Artist Name */
     private String mArtistName;
-
     /** String for Name of Podcast/Mix */
     private String mMixName;
-
     /** String for Info for the Podcast/Mix */
     private String mInfo;
-
     // Drawable resource ID
     private int mImageResourceId;
 
@@ -32,6 +42,26 @@ public class Mixes {
         mInfo = info;
         mImageResourceId = imageResourceId;
     }
+
+    public Mixes(Parcel in){
+        mMixName = in.readString();
+        mArtistName = in.readString();
+        mInfo = in.readString();
+        mImageResourceId = in.readInt();
+            }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mMixName);
+        dest.writeString(mArtistName);
+        dest.writeString(mInfo);
+        dest.writeInt(mImageResourceId);
+    }
+
+    public int describeContents() {
+        return 0;
+    }
+
 
     /**
      * Get the name of the mix
@@ -60,6 +90,7 @@ public class Mixes {
     public int getImageResourceId() {
         return mImageResourceId;
     }
+
 }
 
 
