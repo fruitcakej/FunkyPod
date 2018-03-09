@@ -16,7 +16,7 @@ public class Mixes implements Parcelable{
 
 
         //* why do I need a new array here ??? (as per https://developer.android.com/reference/android/os/Parcelable.html)
-        /* surely I need a new arrayadapter for the ViewPlaylist so I can remove a playlisted item?
+        /* surely I need a new arrayadapter for the ViewPlaylist so I can remove a playlisted item? 
         */
         public Mixes[] newArray(int size) {
             return new Mixes[size];
