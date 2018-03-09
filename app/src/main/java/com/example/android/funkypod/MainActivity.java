@@ -33,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent moreInfoIntent = new Intent(MainActivity.this, MoreInfo.class);
                     startActivity(moreInfoIntent);
-
+                    moreInfoIntent.putExtra(Mixes, R.id.mixName);
+                    moreInfoIntent.putExtra(Mixes, R.id.artistName);
+                    moreInfoIntent.putExtra(Mixes, R.id.info);
+                    moreInfoIntent.putExtra(Mixes, R.id.mix_icon);
 
 
                 }
