@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Create an arraylist of the available mixes / podcasts available
-        ArrayList<Mixes> availableMixes = new ArrayList<Mixes>();
+        final ArrayList<Mixes> availableMixes = new ArrayList<Mixes>();
         availableMixes.add(new Mixes("The Story So Far Part 1", "Scratchmaster Dee",
                 "This beautiful mix from Scratchmaster Dee will take you on an actual journey." +
                         " Elegantly chosen tracks come together beautifully to form this classic house mix",
@@ -59,38 +59,28 @@ public class MainActivity extends AppCompatActivity {
         // Create an {@link MixAdapterAdapter}, whose data source is a list of
         // {@link Mix'}s. The adapter knows how to create list item views for each item
         // in the list.
-        MixAdapter mixAdapter = new MixAdapter(this, availableMixes);
+        final MixAdapter mixAdapter = new MixAdapter(this, availableMixes);
 
         // Get a reference to the ListView, and attach the adapter to the listView.
         ListView listView = (ListView) findViewById(R.id.listview_mixes);
         listView.setAdapter(mixAdapter);
 
         /**
-         * Set onItemClick listener for specific row clicks
+         * Set onItemClick listener for specific row clicks and prepare intent
          */
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                Mixes mixes = availableMixes.get(position);
+
                 Intent moreInfoIntent = new Intent(MainActivity.this, MoreInfo.class);
+                moreInfoIntent.putExtra("mixName", mixes.getMixName());
+                moreInfoIntent.putExtra("info", mixes.getInfo());
+                moreInfoIntent.putExtra("artistName", mixes.getArtistName());
+                moreInfoIntent.putExtra("imageResourceID", mixes.getImageResourceId());
                 startActivity(moreInfoIntent);
-
-            }
-        });
-
-        /**
-         * Do I need this method ?
-         */
-
-        listView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });

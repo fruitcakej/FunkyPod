@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MoreInfo extends AppCompatActivity {
 
@@ -19,6 +21,30 @@ public class MoreInfo extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("More Info");
 
+        /**
+         * Associate to Views
+         */
+        ImageView mix_icon = (ImageView) findViewById(R.id.mix_icon);
+        TextView mixNameTextView = (TextView) findViewById(R.id.mixName);
+        TextView artistNameTextView = (TextView) findViewById(R.id.artistName);
+        TextView infoTextView = (TextView) findViewById(R.id.info);
+
+        /**
+         * Get the selected intent
+         */
+        Intent moreInfoIntent = getIntent();
+        int imageID = moreInfoIntent.getIntExtra("imageResourceID", 0);
+        String mix = moreInfoIntent.getStringExtra("mixName");
+        String info = moreInfoIntent.getStringExtra("info");
+        String artist = moreInfoIntent.getStringExtra("artistName");
+
+        /**
+         * Set on the above Views
+         */
+        mix_icon.setImageResource(imageID);
+        mixNameTextView.setText(mix);
+        artistNameTextView.setText(artist);
+        infoTextView.setText(info);
     }
 
     @Override
