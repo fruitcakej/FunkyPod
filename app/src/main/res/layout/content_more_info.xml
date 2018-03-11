@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.android.funkypod.MoreInfo"
-    tools:showIn="@layout/activity_more_info">
+    tools:showIn="@layout/activity_more_info" >
+
+<android.support.constraint.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
 
     <ImageView
         android:id="@id/mix_icon"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/mix_icon"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        android:contentDescription="@string/mix_icon" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
@@ -30,11 +38,11 @@
         android:id="@id/mixName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/mixName"
-        android:textStyle="bold"
         android:layout_marginEnd="@dimen/lToR"
         android:layout_marginStart="@dimen/lToR"
         android:layout_marginTop="30dp"
+        android:textColor="@color/mixName"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mix_icon" />
@@ -43,10 +51,10 @@
         android:id="@id/info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/infoText"
         android:layout_marginEnd="@dimen/lToR"
         android:layout_marginStart="@dimen/lToR"
         android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textColor="@color/infoText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mixName" />
@@ -55,10 +63,10 @@
         android:id="@id/artistName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/artistName"
         android:layout_marginEnd="@dimen/lToR"
         android:layout_marginStart="@dimen/lToR"
         android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textColor="@color/artistName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/info" />
@@ -73,7 +81,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/artistName"
-        app:srcCompat="@mipmap/ic_add_to_queue_white_24dp" />
+        android:src="@mipmap/ic_add_to_queue_white_24dp"
+        android:contentDescription="@string/addPlaylist" />
 
 
 </android.support.constraint.ConstraintLayout>
+</ScrollView>
