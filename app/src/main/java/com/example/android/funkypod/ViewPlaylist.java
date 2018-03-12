@@ -22,6 +22,9 @@ public class ViewPlaylist extends AppCompatActivity {
 
 
         // Create an arraylist to receive items added to playlist from more info activity
+
+        // Need to add to array
+        
         ArrayList<String> addedToPlaylist = new ArrayList<>();
         Intent playListIntent = getIntent();
         int imageID = playListIntent.getIntExtra("imageID", 0);
