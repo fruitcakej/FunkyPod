@@ -6,10 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MoreInfo extends AppCompatActivity {
+public class MoreInfo extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,8 @@ public class MoreInfo extends AppCompatActivity {
         TextView mixNameTextView = (TextView) findViewById(R.id.mixName);
         TextView artistNameTextView = (TextView) findViewById(R.id.artistName);
         TextView infoTextView = (TextView) findViewById(R.id.info);
+        ImageButton addPlaylist = (ImageButton) findViewById(R.id.addToPlaylist);
+        addPlaylist.setOnClickListener(this);
 
         /**
          * Get the selected intent
@@ -45,6 +50,26 @@ public class MoreInfo extends AppCompatActivity {
         mixNameTextView.setText(mix);
         artistNameTextView.setText(artist);
         infoTextView.setText(info);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.addToPlaylist:
+                Toast.makeText(this, R.string.addedToPlaylist, Toast.LENGTH_SHORT).show();
+
+//                /**
+//                 * Error here on grabbing data ???
+//                 */
+//                Intent playListIntent = new Intent(this, ViewPlaylist.class);
+//                playListIntent.putExtra("mixName", mixes.getMixName());
+//                playListIntent.putExtra("info", mixes.getInfo());
+//                playListIntent.putExtra("artistName", mixes.getArtistName());
+//                playListIntent.putExtra("imageResourceID", mixes.getImageResourceId());
+
+                break;
+    }
+
     }
 
     @Override

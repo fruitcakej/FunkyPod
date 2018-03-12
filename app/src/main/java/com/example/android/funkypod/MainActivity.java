@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,11 +83,24 @@ public class MainActivity extends AppCompatActivity {
                 moreInfoIntent.putExtra("imageResourceID", mixes.getImageResourceId());
                 startActivity(moreInfoIntent);
 
+
+
+
+                Intent sendToPlaylist = getIntent();
+
+
+
             }
+
+
+
+
         });
 
-    }
 
+
+
+}
 
 
 
