@@ -1,10 +1,13 @@
 package com.example.android.funkypod;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.util.ArrayList;
 
 public class ViewPlaylist extends AppCompatActivity {
 
@@ -18,9 +21,13 @@ public class ViewPlaylist extends AppCompatActivity {
         getSupportActionBar().setTitle("Playlist");
 
 
-//        // Create an arraylist to receive items added to playlist from more info activity
-//        ArrayList<Playlist> addedToPlaylist = new ArrayList<Playlist>();
-
+        // Create an arraylist to receive items added to playlist from more info activity
+        ArrayList<String> addedToPlaylist = new ArrayList<>();
+        Intent playListIntent = getIntent();
+        int imageID = playListIntent.getIntExtra("imageID", 0);
+        String mix = playListIntent.getStringExtra("mix");
+        String info = playListIntent.getStringExtra("info");
+        String artist = playListIntent.getStringExtra("artist");
 
 
 

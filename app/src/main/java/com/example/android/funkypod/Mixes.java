@@ -14,16 +14,10 @@ public class Mixes implements Parcelable{
             return new Mixes(in);
         }
 
-
-        //* why do I need a new array here ??? (as per -  https://developer.android.com/reference/android/os/Parcelable.html)
-        /* surely I need a new arrayadapter for the ViewPlaylist so I can remove a playlisted item if user selects?
-        */
         public Mixes[] newArray(int size) {
             return new Mixes[size];
         }
     };
-
-
 
     /** String for Artist Name */
     private String mArtistName;

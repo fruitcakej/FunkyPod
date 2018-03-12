@@ -58,15 +58,12 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
             case R.id.addToPlaylist:
                 Toast.makeText(this, R.string.addedToPlaylist, Toast.LENGTH_SHORT).show();
 
-//                /**
-//                 * Error here on grabbing data ???
-//                 */
-//                Intent playListIntent = new Intent(this, ViewPlaylist.class);
-//                playListIntent.putExtra("mixName", mixes.getMixName());
-//                playListIntent.putExtra("info", mixes.getInfo());
-//                playListIntent.putExtra("artistName", mixes.getArtistName());
-//                playListIntent.putExtra("imageResourceID", mixes.getImageResourceId());
-
+                Intent playListIntent = new Intent(this, ViewPlaylist.class);
+                playListIntent.putExtra("mix", 0);
+                playListIntent.putExtra("info", 0);
+                playListIntent.putExtra("artist", 0);
+                playListIntent.putExtra("imageID", 0);
+                startActivity(playListIntent);
                 break;
     }
 
