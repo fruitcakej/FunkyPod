@@ -52,6 +52,11 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
         infoTextView.setText(info);
     }
 
+    /**
+     *
+     * OnClick to added selected info to new intent for viewPlaylist
+     */
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
