@@ -37,18 +37,20 @@ public class ViewPlaylist extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.playlist_view);
         listView.setAdapter(adapter);
 
+        // Need to get intent from MoreInfo and add to arraylist
+
+        Intent playListIntent = getIntent();
+        int imageID = playListIntent.getIntExtra("imageID", 0)
+        String mix = playListIntent.getStringExtra("mix");
+        String artist = playListIntent.getStringExtra("artist");
+
 /**
  * Associate to Views
  */
         ImageView pl_icon = (ImageView) findViewById(R.id.pl_icon);
         TextView plMixName = (TextView) findViewById(R.id.pl_mix_name);
         TextView plArtistName = (TextView) findViewById(R.id.pl_artist_name);
-
-        addedToPlaylist.add(getIntent().toString());
-        Intent toPlaylist = getIntent();
-        int imageID = toPlaylist.getIntExtra("imageID", 0);
-        String mix = toPlaylist.getStringExtra("mix");
-        String artist = toPlaylist.getStringExtra("artist");
+        
 
         /**
          * Set on the above Views
