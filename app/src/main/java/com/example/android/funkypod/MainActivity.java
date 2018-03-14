@@ -82,27 +82,11 @@ public class MainActivity extends AppCompatActivity {
                 moreInfoIntent.putExtra("imageResourceID", mixes.getImageResourceId());
                 startActivity(moreInfoIntent);
 
-
-
-
-
-
-
-
             }
-
-
-
 
         });
 
-
-
-
 }
-
-
-
 
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
