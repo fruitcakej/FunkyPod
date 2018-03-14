@@ -63,6 +63,8 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
             case R.id.addToPlaylist:
                 Toast.makeText(this, R.string.addedToPlaylist, Toast.LENGTH_SHORT).show();
 
+                // Need to send via parcelable here
+
                 Intent playListIntent = new Intent(this, ViewPlaylist.class);
                 playListIntent.putExtra("mix", 0);
                 playListIntent.putExtra("info", 0);

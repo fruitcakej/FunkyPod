@@ -35,9 +35,10 @@ public class ViewPlaylist extends AppCompatActivity {
         listView.setAdapter(playlistAdapter);
 
 
-        // Need to get intent from MoreInfo and add to newly created arraylist
+        // Need to get intent from MoreInfo (via parcelable) and add to newly created arraylist
 
         Intent playListIntent = getIntent();
+
         int imageID = playListIntent.getIntExtra("imageID", 0);
         String mix = playListIntent.getStringExtra("mix");
         String artist = playListIntent.getStringExtra("artist");
