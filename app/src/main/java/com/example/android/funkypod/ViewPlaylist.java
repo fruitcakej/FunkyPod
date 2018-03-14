@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -29,11 +28,11 @@ public class ViewPlaylist extends AppCompatActivity {
 
         final ArrayList<String> addedToPlaylist = new ArrayList<>();
 
-        ArrayAdapter adapter = new ArrayAdapter <String>(ViewPlaylist.this, 0, addedToPlaylist);
+        final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, addedToPlaylist);
 
         // Get a reference to the ListView, and attach the adapter to the listView.
         ListView listView = (ListView) findViewById(R.id.playlist_view);
-        listView.setAdapter(adapter);
+        listView.setAdapter(playlistAdapter);
 
 
         // Need to get intent from MoreInfo and add to newly created arraylist
