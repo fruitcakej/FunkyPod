@@ -11,7 +11,7 @@
     android:padding="@dimen/list_items">
 
     <ImageView
-        android:id="@id/mix_icon"
+        android:id="@+id/pl_icon"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginRight="@dimen/list_items"
@@ -28,7 +28,7 @@
         android:paddingRight="@dimen/list_items">
 
         <TextView
-            android:id="@id/mixName"
+            android:id="@+id/pl_mix_name"
             android:textColor="@color/mixName"
             android:textStyle="bold"
             android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
             <!--android:maxLines="2"/>-->
 
         <TextView
-            android:id="@id/artistName"
+            android:id="@+id/pl_artist_name"
             android:textColor="@color/artistName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

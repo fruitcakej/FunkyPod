@@ -7,7 +7,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -23,25 +25,37 @@ public class ViewPlaylist extends AppCompatActivity {
         getSupportActionBar().setTitle("Playlist");
 
 
-        // Create an arraylist to receive items added to playlist from more info activity
+        // Create an arraylist to receive items added to playlist from moreInfo activity
 
         // Need to add to array via add(getIntent()) ?
 
         final ArrayList<String> addedToPlaylist = new ArrayList<>();
-        addedToPlaylist.add(getIntent().toString());
 
-        ArrayAdapter adapter = new ArrayAdapter <String>(this, addedToPlaylist);
+        ArrayAdapter adapter = new ArrayAdapter <String>(ViewPlaylist.this, 0, addedToPlaylist);
 
         // Get a reference to the ListView, and attach the adapter to the listView.
         ListView listView = (ListView) findViewById(R.id.playlist_view);
         listView.setAdapter(adapter);
 
+/**
+ * Associate to Views
+ */
+        ImageView pl_icon = (ImageView) findViewById(R.id.pl_icon);
+        TextView plMixName = (TextView) findViewById(R.id.pl_mix_name);
+        TextView plArtistName = (TextView) findViewById(R.id.pl_artist_name);
 
-//        Intent playListIntent = getIntent();
-//        int imageID = playListIntent.getIntExtra("imageID", 0);
-//        String mix = playListIntent.getStringExtra("mix");
-//        String info = playListIntent.getStringExtra("info");
-//        String artist = playListIntent.getStringExtra("artist");
+        addedToPlaylist.add(getIntent().toString());
+        Intent toPlaylist = getIntent();
+        int imageID = toPlaylist.getIntExtra("imageID", 0);
+        String mix = toPlaylist.getStringExtra("mix");
+        String artist = toPlaylist.getStringExtra("artist");
+
+        /**
+         * Set on the above Views
+         */
+        pl_icon.setImageResource(imageID);
+        plMixName.setText(mix);
+        plArtistName.setText(artist);
 
 
 
