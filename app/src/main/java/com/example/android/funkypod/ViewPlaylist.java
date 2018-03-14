@@ -27,8 +27,6 @@ public class ViewPlaylist extends AppCompatActivity {
 
         // Create an arraylist to receive items added to playlist from moreInfo activity
 
-        // Need to add to array via add(getIntent()) ?
-
         final ArrayList<String> addedToPlaylist = new ArrayList<>();
 
         ArrayAdapter adapter = new ArrayAdapter <String>(ViewPlaylist.this, 0, addedToPlaylist);
@@ -37,12 +35,18 @@ public class ViewPlaylist extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.playlist_view);
         listView.setAdapter(adapter);
 
-        // Need to get intent from MoreInfo and add to arraylist
+
+        // Need to get intent from MoreInfo and add to newly created arraylist
 
         Intent playListIntent = getIntent();
-        int imageID = playListIntent.getIntExtra("imageID", 0)
+        int imageID = playListIntent.getIntExtra("imageID", 0);
         String mix = playListIntent.getStringExtra("mix");
         String artist = playListIntent.getStringExtra("artist");
+        addedToPlaylist.add("imageID");
+        addedToPlaylist.add("mix");
+        addedToPlaylist.add("artist");
+
+
 
 /**
  * Associate to Views
@@ -50,7 +54,7 @@ public class ViewPlaylist extends AppCompatActivity {
         ImageView pl_icon = (ImageView) findViewById(R.id.pl_icon);
         TextView plMixName = (TextView) findViewById(R.id.pl_mix_name);
         TextView plArtistName = (TextView) findViewById(R.id.pl_artist_name);
-        
+
 
         /**
          * Set on the above Views
