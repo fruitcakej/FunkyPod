@@ -26,7 +26,7 @@ public class ViewPlaylist extends AppCompatActivity {
 
         // Create an arraylist to receive items added to playlist from moreInfo activity
 
-        final ArrayList<String> addedToPlaylist = new ArrayList<>();
+        final ArrayList<Playlist> addedToPlaylist = new ArrayList<>();
 
         final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, addedToPlaylist);
 

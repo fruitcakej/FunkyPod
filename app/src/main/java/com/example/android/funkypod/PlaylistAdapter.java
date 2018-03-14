@@ -16,17 +16,17 @@ import java.util.ArrayList;
  * Created by Jamie C on 05/03/2018.
  */
 
-public class PlaylistAdapter extends ArrayAdapter<String> {
+public class PlaylistAdapter extends ArrayAdapter<Playlist> {
 
     /**
      * The context is used to inflate the layout file, and the list is the data we want
      * to populate into the lists.
      *
      * @param context  The current context. Used to inflate the layout file.
-     * @param
+     * @param playlist A List of playlist objects to display in a list
      */
 
-    public PlaylistAdapter(Context context, ArrayList<String> playlist) {
+    public PlaylistAdapter(Context context, ArrayList<Playlist> playlist) {
 
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
         // the second argument is used when the ArrayAdapter is populating a single TextView.
@@ -57,7 +57,7 @@ public class PlaylistAdapter extends ArrayAdapter<String> {
         }
 
         // Get the {@link mixes} object located at this position in the list
-        String playlist = getItem(position);
+        Playlist playlist = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the mix name text view
         TextView mixNameTextView = (TextView) listItemView.findViewById(R.id.pl_mix_name);
