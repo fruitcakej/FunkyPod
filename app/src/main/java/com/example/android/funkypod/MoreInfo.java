@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 public class MoreInfo extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String TAG = "MoreInfo";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

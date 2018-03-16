@@ -38,11 +38,13 @@ public class ViewPlaylist extends AppCompatActivity {
 
         final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, addedToPlaylist);
 
+        addedToPlaylist.add(receive);
+
         // Get a reference to the ListView, and attach the adapter to the listView.
         ListView listView = (ListView) findViewById(R.id.playlist_view);
         listView.setAdapter(playlistAdapter);
 
-        addedToPlaylist.add(receive);
+
 
 
         /**
