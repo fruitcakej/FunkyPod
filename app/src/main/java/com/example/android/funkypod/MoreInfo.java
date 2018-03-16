@@ -43,8 +43,8 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
         TextView artistNameTextView = (TextView) findViewById(R.id.artistName);
         TextView infoTextView = (TextView) findViewById(R.id.info);
         ImageButton addPlaylist = (ImageButton) findViewById(R.id.addToPlaylist);
-        addPlaylist.setOnClickListener(this);
 
+        addPlaylist.setOnClickListener(this);
 
         /**
          * Set on the above Views
@@ -68,10 +68,11 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
 
                 // Need to send via parcelable here
 
-//                Intent playListIntent = new Intent(this, ViewPlaylist.class);
-//                playListIntent.putExtra("mix",
-//                startActivity(playListIntent);
-//                break;
+                Intent playListIntent = new Intent(this, ViewPlaylist.class);
+
+                playListIntent.putExtra("items", 0);
+                startActivity(playListIntent);
+                break;
     }
 
     }
