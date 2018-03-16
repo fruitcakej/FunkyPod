@@ -50,6 +50,9 @@ public class Mixes implements Parcelable{
         mImageResourceId = in.readInt();
             }
 
+    public Mixes(int imageID, String mix, String artist) {
+    }
+
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mMixName);
@@ -90,6 +93,7 @@ public class Mixes implements Parcelable{
     public int getImageResourceId() {
         return mImageResourceId;
     }
+
 
 }
 

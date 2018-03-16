@@ -30,16 +30,16 @@ public class ViewPlaylist extends AppCompatActivity {
         Intent playListIntent = getIntent();
         receive = playListIntent.getParcelableExtra("items");
 
-        int imageID = receive.getImageResourceId();  // error here, not sure if intent is coming over and Playlist class getting utilised ?
+        int imageID = receive.getImageResourceId();
         String mix = receive.getMixName();
         String artist = receive.getArtistName();
 
         // Create an arraylist to receive items added to playlist from moreInfo activity
 
-        final ArrayList<Mixes> addedToPlaylist = new ArrayList<>();
+        ArrayList<Mixes> addedToPlaylist = new ArrayList<>();
 
         //Add received data to arraylist
-        addedToPlaylist.add(imageID, Mixes);
+        addedToPlaylist.add(new Mixes(imageID, mix, artist));
 
 
         final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, addedToPlaylist);
