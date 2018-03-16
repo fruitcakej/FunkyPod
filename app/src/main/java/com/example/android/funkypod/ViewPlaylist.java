@@ -39,7 +39,7 @@ public class ViewPlaylist extends AppCompatActivity {
         final ArrayList<Mixes> addedToPlaylist = new ArrayList<>();
 
         //Add received data to arraylist
-        addedToPlaylist.add(imageID);
+        addedToPlaylist.add(imageID, Mixes);
 
 
         final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, addedToPlaylist);
@@ -49,16 +49,12 @@ public class ViewPlaylist extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.playlist_view);
         listView.setAdapter(playlistAdapter);
 
-
-
-
         /**
         * Associate to Views
         */
         ImageView pl_icon = (ImageView) findViewById(R.id.pl_icon);
         TextView plMixName = (TextView) findViewById(R.id.pl_mix_name);
         TextView plArtistName = (TextView) findViewById(R.id.pl_artist_name);
-
 
         /**
          * Set on the above Views
