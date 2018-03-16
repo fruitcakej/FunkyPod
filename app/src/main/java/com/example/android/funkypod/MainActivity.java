@@ -76,12 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 Mixes mixes = availableMixes.get(position);
 
                 Intent moreInfoIntent = new Intent(MainActivity.this, MoreInfo.class);
-                moreInfoIntent.putExtra("mixName", mixes.getMixName());
-                moreInfoIntent.putExtra("info", mixes.getInfo());
-                moreInfoIntent.putExtra("artistName", mixes.getArtistName());
-                moreInfoIntent.putExtra("imageResourceID", mixes.getImageResourceId());
+                moreInfoIntent.putExtra("items", mixes);
                 startActivity(moreInfoIntent);
-
             }
 
         });

@@ -25,6 +25,17 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
         getSupportActionBar().setTitle("More Info");
 
         /**
+         * Get the selected intent via parcelable
+         */
+        Intent moreInfoIntent = getIntent();
+        Mixes receive = moreInfoIntent.getParcelableExtra("items");
+
+        int imageID = receive.getImageResourceId();
+        String mix = receive.getMixName();
+        String info = receive.getInfo();
+        String artist = receive.getArtistName();
+
+        /**
          * Associate to Views
          */
         ImageView mix_icon = (ImageView) findViewById(R.id.mix_icon);
@@ -34,14 +45,6 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
         ImageButton addPlaylist = (ImageButton) findViewById(R.id.addToPlaylist);
         addPlaylist.setOnClickListener(this);
 
-        /**
-         * Get the selected intent
-         */
-        Intent moreInfoIntent = getIntent();
-        int imageID = moreInfoIntent.getIntExtra("imageResourceID", 0);
-        String mix = moreInfoIntent.getStringExtra("mixName");
-        String info = moreInfoIntent.getStringExtra("info");
-        String artist = moreInfoIntent.getStringExtra("artistName");
 
         /**
          * Set on the above Views
@@ -65,13 +68,10 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
 
                 // Need to send via parcelable here
 
-                Intent playListIntent = new Intent(this, ViewPlaylist.class);
-                playListIntent.putExtra("mix", 0);
-                playListIntent.putExtra("info", 0);
-                playListIntent.putExtra("artist", 0);
-                playListIntent.putExtra("imageID", 0);
-                startActivity(playListIntent);
-                break;
+//                Intent playListIntent = new Intent(this, ViewPlaylist.class);
+//                playListIntent.putExtra("mix",
+//                startActivity(playListIntent);
+//                break;
     }
 
     }

@@ -1,14 +1,11 @@
 package com.example.android.funkypod;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -37,33 +34,29 @@ public class ViewPlaylist extends AppCompatActivity {
 
         // Need to get intent from MoreInfo (via parcelable) and add to newly created arraylist
 
-        Intent playListIntent = getIntent();
-
-        int imageID = playListIntent.getIntExtra("imageID", 0);
-        String mix = playListIntent.getStringExtra("mix");
-        String artist = playListIntent.getStringExtra("artist");
-        addedToPlaylist.add("imageID");
-        addedToPlaylist.add("mix");
-        addedToPlaylist.add("artist");
-
-
-
-/**
- * Associate to Views
- */
-        ImageView pl_icon = (ImageView) findViewById(R.id.pl_icon);
-        TextView plMixName = (TextView) findViewById(R.id.pl_mix_name);
-        TextView plArtistName = (TextView) findViewById(R.id.pl_artist_name);
-
-
-        /**
-         * Set on the above Views
-         */
-        pl_icon.setImageResource(imageID);
-        plMixName.setText(mix);
-        plArtistName.setText(artist);
-
-
+//        Intent playListIntent = getIntent();
+//
+//        int imageID = playListIntent.getIntExtra("imageID", 0);
+//        String mix = playListIntent.getStringExtra("mix");
+//        String artist = playListIntent.getStringExtra("artist");
+//        addedToPlaylist.add("imageID");
+//        addedToPlaylist.add("mix");
+//        addedToPlaylist.add("artist");
+//
+///**
+// * Associate to Views
+// */
+//        ImageView pl_icon = (ImageView) findViewById(R.id.pl_icon);
+//        TextView plMixName = (TextView) findViewById(R.id.pl_mix_name);
+//        TextView plArtistName = (TextView) findViewById(R.id.pl_artist_name);
+//
+//
+//        /**
+//         * Set on the above Views
+//         */
+//        pl_icon.setImageResource(imageID);
+//        plMixName.setText(mix);
+//        plArtistName.setText(artist);
 
     }
 
