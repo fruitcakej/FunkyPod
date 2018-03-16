@@ -51,6 +51,10 @@ public class Mixes implements Parcelable{
             }
 
     public Mixes(int imageID, String mix, String artist) {
+
+        mMixName = mix;
+        mArtistName = artist;
+        mImageResourceId = imageID;
     }
 
     @Override
