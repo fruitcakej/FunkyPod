@@ -23,6 +23,14 @@ public class ViewPlaylist extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Playlist");
 
+        // Need to get intent from MoreInfo (via parcelable) and add to newly created arraylist
+
+        Intent playListIntent = getIntent();
+        Playlist receive = playListIntent.getParcelableExtra("items");
+
+        int imageID = receive.getImageResourceId();
+        String mix = receive.getMixName();
+        String artist = receive.getArtistName();
 
         // Create an arraylist to receive items added to playlist from moreInfo activity
 
@@ -34,16 +42,8 @@ public class ViewPlaylist extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.playlist_view);
         listView.setAdapter(playlistAdapter);
 
-
-        // Need to get intent from MoreInfo (via parcelable) and add to newly created arraylist
-
-        Intent playListIntent = getIntent();
-        Playlist receive = playListIntent.getParcelableExtra("items");
         addedToPlaylist.add(receive);
 
-        int imageID = receive.getImageResourceId();
-        String mix = receive.getMixName();
-        String artist = receive.getArtistName();
 
         /**
         * Associate to Views
