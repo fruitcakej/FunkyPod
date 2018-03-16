@@ -14,6 +14,8 @@ import java.util.ArrayList;
 
 public class ViewPlaylist extends AppCompatActivity {
 
+    private Mixes receive;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +28,7 @@ public class ViewPlaylist extends AppCompatActivity {
         // Need to get intent from MoreInfo (via parcelable) and add to newly created arraylist
 
         Intent playListIntent = getIntent();
-        Playlist receive = playListIntent.getParcelableExtra("items");
+        receive = playListIntent.getParcelableExtra("items");
 
         int imageID = receive.getImageResourceId();  // error here, not sure if intent is coming over and Playlist class getting utilised ?
         String mix = receive.getMixName();
@@ -34,13 +36,14 @@ public class ViewPlaylist extends AppCompatActivity {
 
         // Create an arraylist to receive items added to playlist from moreInfo activity
 
-        final ArrayList<Playlist> addedToPlaylist = new ArrayList<>();
+        final ArrayList<Mixes> addedToPlaylist = new ArrayList<>();
+
+        //Add received data to arraylist
+        addedToPlaylist.add(imageID);
+
 
         final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, addedToPlaylist);
 
-
-        //Add received data to arraylist
-        addedToPlaylist.add(receive);
 
         // Get a reference to the ListView, and attach the adapter to the listView.
         ListView listView = (ListView) findViewById(R.id.playlist_view);

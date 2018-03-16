@@ -16,23 +16,23 @@ import java.util.ArrayList;
  * Created by Jamie C on 05/03/2018.
  */
 
-public class PlaylistAdapter extends ArrayAdapter<Playlist> {
+public class PlaylistAdapter extends ArrayAdapter<Mixes> {
 
     /**
      * The context is used to inflate the layout file, and the list is the data we want
      * to populate into the lists.
      *
      * @param context  The current context. Used to inflate the layout file.
-     * @param playlist A List of playlist objects to display in a list
+     * @param mixes A List of playlist objects to display in a list
      */
 
-    public PlaylistAdapter(Context context, ArrayList<Playlist> playlist) {
+    public PlaylistAdapter(Context context, ArrayList<Mixes> mixes) {
 
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
         // the second argument is used when the ArrayAdapter is populating a single TextView.
         // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
         // going to use this second argument, so it can be any value. Here, we used 0.
-        super(context, 0, playlist);
+        super(context, 0, mixes);
     }
 
     /**
@@ -57,35 +57,35 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> {
         }
 
         // Get the {@link mixes} object located at this position in the list
-        Playlist playlist = getItem(position);
+        Mixes mixes = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the mix name text view
         TextView mixNameTextView = (TextView) listItemView.findViewById(R.id.pl_mix_name);
 
         // Get the mix name from com.example.android.funkypod.Mixes object
         // set this text on the mixname TextView
-        mixNameTextView.setText(playlist.getMixName());
+        mixNameTextView.setText(mixes.getMixName());
 
         // Find the TextView in the list_item.xml layout with the artist text view
         TextView artistNameTextView = (TextView) listItemView.findViewById(R.id.pl_artist_name);
 
         // Get the artist name from com.example.android.funkypod.Mixes object
         // set this text on the artistname TextView
-       artistNameTextView.setText(playlist.getArtistName());
+       artistNameTextView.setText(mixes.getArtistName());
 
         // Find the TextView in the list_item.xml layout with the info text view
 //        TextView infoTextView = (TextView) listItemView.findViewById(R.id.info);
 
         // Get the info from com.example.android.funkypod.Mixes object
         // set this text on the info TextView
-//        infoTextView.setText(playlist.getInfo());
+//        infoTextView.setText(mixes.getInfo());
 
         // Find the ImageView in the list_item.xml layout with the ID mix_icon
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.pl_icon);
 
         // Get the image resource ID from com.example.android.funkypod.Mixes object and
         // set the image to iconView
-        iconView.setImageResource(playlist.getImageResourceId());
+        iconView.setImageResource(mixes.getImageResourceId());
 
         return listItemView;
     }

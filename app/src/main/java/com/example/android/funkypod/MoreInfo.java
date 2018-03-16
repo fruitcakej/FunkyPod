@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 public class MoreInfo extends AppCompatActivity implements View.OnClickListener {
 
+    private Mixes receive;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +30,7 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
          * Get the selected intent via parcelable
          */
         Intent moreInfoIntent = getIntent();
-        Mixes receive = moreInfoIntent.getParcelableExtra("items");
+        receive = moreInfoIntent.getParcelableExtra("items");
 
         int imageID = receive.getImageResourceId();
         String mix = receive.getMixName();
@@ -37,7 +39,6 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
 
         /**
          * Initialise global variable so that when added to playlist it will persist
-         * when changing activities
          */
         final GlobalClass globalvariable = (GlobalClass) getApplicationContext();
 
@@ -83,10 +84,8 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
                 // Need to send via Intent here
                 Intent playListIntent = new Intent(this, ViewPlaylist.class);
 
-                playListIntent.putExtra("items",0);
+                playListIntent.putExtra("items", receive);
                 startActivity(playListIntent);
-
-
                 break;
     }
 
