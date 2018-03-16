@@ -65,10 +65,7 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
         mixNameTextView.setText(mix);
         artistNameTextView.setText(artist);
         infoTextView.setText(info);
-
-
     }
-
 
     /**
      *
@@ -83,7 +80,6 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
 
                 // Need to send via Intent here
                 Intent playListIntent = new Intent(this, ViewPlaylist.class);
-
                 playListIntent.putExtra("items", receive);
                 startActivity(playListIntent);
                 break;
