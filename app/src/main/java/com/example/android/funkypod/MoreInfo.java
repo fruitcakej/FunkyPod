@@ -14,8 +14,6 @@ import android.widget.Toast;
 
 public class MoreInfo extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "MoreInfo";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +53,10 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
         mixNameTextView.setText(mix);
         artistNameTextView.setText(artist);
         infoTextView.setText(info);
+
+
     }
+
 
     /**
      *
@@ -68,12 +69,13 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
             case R.id.addToPlaylist:
                 Toast.makeText(this, R.string.addedToPlaylist, Toast.LENGTH_SHORT).show();
 
-                // Need to send via parcelable here
-
+                // Need to send via Intent here
                 Intent playListIntent = new Intent(this, ViewPlaylist.class);
 
-                playListIntent.putExtra("items", 0);
+                playListIntent.putExtra("items",0);
                 startActivity(playListIntent);
+
+
                 break;
     }
 

@@ -28,7 +28,7 @@ public class ViewPlaylist extends AppCompatActivity {
         Intent playListIntent = getIntent();
         Playlist receive = playListIntent.getParcelableExtra("items");
 
-        int imageID = receive.getImageResourceId();
+        int imageID = receive.getImageResourceId();  // error here, not sure if intent is coming over and Playlist class getting utilised ?
         String mix = receive.getMixName();
         String artist = receive.getArtistName();
 
@@ -38,6 +38,8 @@ public class ViewPlaylist extends AppCompatActivity {
 
         final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, addedToPlaylist);
 
+
+        //Add received data to arraylist
         addedToPlaylist.add(receive);
 
         // Get a reference to the ListView, and attach the adapter to the listView.
