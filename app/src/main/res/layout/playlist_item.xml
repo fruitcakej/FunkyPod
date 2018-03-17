@@ -34,14 +34,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <!--<TextView-->
-            <!--android:id="@+id/info"-->
-            <!--android:textColor="@color/infoText"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:ellipsize="end"-->
-            <!--android:maxLines="2"/>-->
-
         <TextView
             android:id="@+id/pl_artist_name"
             android:textColor="@color/artistName"

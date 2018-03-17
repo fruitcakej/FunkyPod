@@ -6,9 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -41,29 +39,13 @@ public class ViewPlaylist extends AppCompatActivity {
         //Add received data to arraylist
         addedToPlaylist.add(new Mixes(imageID, mix, artist));
 
-
         final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, addedToPlaylist);
-
 
         // Get a reference to the ListView, and attach the adapter to the listView.
         ListView listView = (ListView) findViewById(R.id.playlist_view);
         listView.setAdapter(playlistAdapter);
 
-        /**
-        * Associate to Views
-        */
-        ImageView pl_icon = (ImageView) findViewById(R.id.pl_icon);
-        TextView plMixName = (TextView) findViewById(R.id.pl_mix_name);
-        TextView plArtistName = (TextView) findViewById(R.id.pl_artist_name);
-
-        /**
-         * Set on the above Views
-         */
-        pl_icon.setImageResource(imageID);
-        plMixName.setText(mix);
-        plArtistName.setText(artist);
-
-    }
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
