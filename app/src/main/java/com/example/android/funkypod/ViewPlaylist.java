@@ -32,12 +32,30 @@ public class ViewPlaylist extends AppCompatActivity {
         String mix = receive.getMixName();
         String artist = receive.getArtistName();
 
+        /**
+         * Initialise global variable so that it takes data from intent and stores in global variable
+         * also adds values to new int and string values
+         */
+        GlobalClass globalvariable = (GlobalClass) getApplicationContext();
+
+        globalvariable.setImageIDToPlaylist(imageID);
+        globalvariable.setMixNameToPlaylist(mix);
+        globalvariable.setMixArtistToPlaylist(artist);
+
+        int globalImageID = globalvariable.getImageIDToPlaylist();
+        String globalMixName = globalvariable.getMixNameToPlaylist();
+        String globalArtistName = globalvariable.getMixArtistToPlaylist();
+
+
         // Create an arraylist to receive items added to playlist from moreInfo activity
 
         ArrayList<Mixes> addedToPlaylist = new ArrayList<>();
 
         //Add received data to arraylist
-        addedToPlaylist.add(new Mixes(imageID, mix, artist));
+        addedToPlaylist.add(new Mixes(globalImageID, globalMixName, globalArtistName));
+
+        // also tried addedToPlaylist.add(new GlobalClass(globalImageID, globalMixName, globalArtistName));
+        // regardless, data is not persistent and errors on 'new GlobalClass' above
 
         final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, addedToPlaylist);
 
