@@ -33,8 +33,8 @@ public class ViewPlaylist extends AppCompatActivity {
         String artist = receive.getArtistName();
 
         /**
-         * Initialise global variable so that it takes data from intent and stores in global variable
-         * also adds values to new int and string values
+         * Initialise global variable so that it takes data from intent and stores ---
+         *
          */
         GlobalClass globalvariable = (GlobalClass) getApplicationContext();
 

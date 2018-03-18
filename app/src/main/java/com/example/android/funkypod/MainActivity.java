@@ -13,8 +13,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Mixes receive;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Create an arraylist of the available mixes / podcasts available
-         final ArrayList<Mixes> availableMixes = new ArrayList<Mixes>();
+         final ArrayList<Mixes> availableMixes = new ArrayList<>();
         availableMixes.add(new Mixes("The Story So Far Part 1", "Scratchmaster Dee",
                 "This beautiful mix from Scratchmaster Dee will take you on an actual journey." +
                         " Elegantly chosen tracks come together beautifully to form this classic house mix",

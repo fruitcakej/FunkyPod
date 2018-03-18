@@ -2,6 +2,8 @@ package com.example.android.funkypod;
 
 import android.app.Application;
 
+import java.util.ArrayList;
+
 /**
  * Created by Jamie C on 15/03/2018.
  *
@@ -15,6 +17,13 @@ public class GlobalClass extends Application{
     private String mixNameToPlaylist;
     private String mixArtistToPlaylist;
     private int imageIDToPlaylist;
+    private ArrayList<Mixes> mixes;
+
+    public void addMixes(Mixes mix) {
+        mixes = new ArrayList<>();
+
+    }
+
 
     public String getMixNameToPlaylist() {
         return mixNameToPlaylist;

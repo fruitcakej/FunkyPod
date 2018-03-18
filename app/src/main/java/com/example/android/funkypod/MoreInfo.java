@@ -37,16 +37,6 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
         String info = receive.getInfo();
         String artist = receive.getArtistName();
 
-//        /**
-//         * Initialise global variable so that when added to playlist it will persist
-//         */
-//        final GlobalClass globalvariable = (GlobalClass) getApplicationContext();
-//
-//        globalvariable.setImageIDToPlaylist(receive.getImageResourceId());
-//        globalvariable.setMixNameToPlaylist(receive.getMixName());
-//        globalvariable.setMixArtistToPlaylist(receive.getArtistName());
-
-
         /**
          * Associate to Views
          */
