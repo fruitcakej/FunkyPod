@@ -46,7 +46,8 @@ public class ViewPlaylist extends AppCompatActivity {
 //            String globalMixName = globalvariable.getMixNameToPlaylist();
 //            String globalArtistName = globalvariable.getMixArtistToPlaylist();
 
-            //
+
+            // Playlist to store ViewPlaylist items now moved to GlobalClass so that it can persist.
 
 
 
