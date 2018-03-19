@@ -12,28 +12,27 @@ import java.util.ArrayList;
  */
 
 
-public class GlobalClass extends Application{
+public class GlobalClass extends Application {
+
 
     private String mixNameToPlaylist;
     private String mixArtistToPlaylist;
     private int imageIDToPlaylist;
     private ArrayList<Mixes> mixes;
 
-    // Do I need this getter?
-    public ArrayList<Mixes> getMixes() {
-        return mixes;
-    }
-
     public void addMixes(Mixes mix) {
 
-        GlobalClass addMixes = new GlobalClass();
-       if (mixes != null) {
-        mixes = new ArrayList<>();
-        mixes.add(mix);
-        final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, mixes);
+         GlobalClass addMixes = new GlobalClass();
 
-}
-    }
+
+        if (mixes == null) {
+            mixes = new ArrayList<>();
+        }
+            else {
+            mixes.add(mix);
+            }
+        }
+
 
     public String getMixNameToPlaylist() {
         return mixNameToPlaylist;

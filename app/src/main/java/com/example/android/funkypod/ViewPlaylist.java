@@ -49,7 +49,7 @@ public class ViewPlaylist extends AppCompatActivity {
 
             // Playlist to store ViewPlaylist items now moved to GlobalClass so that it can persist.
 
-
+            final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, mixes);
 
             // Get a reference to the ListView, and attach the adapter to the listView.
             ListView listView = (ListView) findViewById(R.id.playlist_view);
