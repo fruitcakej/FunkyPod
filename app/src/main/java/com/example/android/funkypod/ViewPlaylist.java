@@ -6,9 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
-
-import java.util.ArrayList;
 
 public class ViewPlaylist extends AppCompatActivity {
 
@@ -46,21 +43,12 @@ public class ViewPlaylist extends AppCompatActivity {
             String globalMixName = globalvariable.getMixNameToPlaylist();
             String globalArtistName = globalvariable.getMixArtistToPlaylist();
 
-            // Create an arraylist to receive items added to playlist from moreInfo activity
+            // Add the value to the GlobalClass Arraylist so that it is retained
 
-            ArrayList<Mixes> addedToPlaylist = new ArrayList<>();
 
-            //Add received data to arraylist
-            addedToPlaylist.add(new Mixes(globalImageID, globalMixName, globalArtistName));
 
-            // also tried addedToPlaylist.add(new GlobalClass(globalImageID, globalMixName, globalArtistName));
-            // regardless, data is not persistent and errors on 'new GlobalClass' above
+            
 
-            final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, addedToPlaylist);
-
-            // Get a reference to the ListView, and attach the adapter to the listView.
-            ListView listView = (ListView) findViewById(R.id.playlist_view);
-            listView.setAdapter(playlistAdapter);
 
         } else {
             // processing when no extra data received
