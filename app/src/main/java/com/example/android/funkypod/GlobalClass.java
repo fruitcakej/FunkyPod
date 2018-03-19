@@ -19,15 +19,19 @@ public class GlobalClass extends Application{
     private int imageIDToPlaylist;
     private ArrayList<Mixes> mixes;
 
+    // Do I need this getter?
     public ArrayList<Mixes> getMixes() {
         return mixes;
     }
 
     public void addMixes(Mixes mix) {
 
+        GlobalClass addMixes = new GlobalClass();
        if (mixes != null) {
         mixes = new ArrayList<>();
         mixes.add(mix);
+        final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, mixes);
+
 }
     }
 

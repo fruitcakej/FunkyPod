@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 public class ViewPlaylist extends AppCompatActivity {
 
@@ -33,28 +34,33 @@ public class ViewPlaylist extends AppCompatActivity {
             String artist = receive.getArtistName();
 
             // Initialise global variable so that it takes data from intent and stores ---
-            GlobalClass globalvariable = (GlobalClass) getApplicationContext();
+            // Don't think I need this anymore
 
-            globalvariable.setImageIDToPlaylist(imageID);
-            globalvariable.setMixNameToPlaylist(mix);
-            globalvariable.setMixArtistToPlaylist(artist);
+//            GlobalClass globalvariable = (GlobalClass) getApplicationContext();
+//
+//            globalvariable.setImageIDToPlaylist(imageID);
+//            globalvariable.setMixNameToPlaylist(mix);
+//            globalvariable.setMixArtistToPlaylist(artist);
+//
+//            int globalImageID = globalvariable.getImageIDToPlaylist();
+//            String globalMixName = globalvariable.getMixNameToPlaylist();
+//            String globalArtistName = globalvariable.getMixArtistToPlaylist();
 
-            int globalImageID = globalvariable.getImageIDToPlaylist();
-            String globalMixName = globalvariable.getMixNameToPlaylist();
-            String globalArtistName = globalvariable.getMixArtistToPlaylist();
-
-            // Add the value to the GlobalClass Arraylist so that it is retained
+            //
 
 
 
-            
+            // Get a reference to the ListView, and attach the adapter to the listView.
+            ListView listView = (ListView) findViewById(R.id.playlist_view);
+            listView.setAdapter(playlistAdapter);
+
+
 
 
         } else {
             // processing when no extra data received
             return;
         }
-
 
         }
 
