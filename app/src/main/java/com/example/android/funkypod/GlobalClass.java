@@ -22,7 +22,7 @@ public class GlobalClass extends Application{
     public ArrayList<Mixes> getMixes() {
         return mixes;
     }
-    
+
     public void addMixes(Mixes mix) {
         mixes = new ArrayList<>();
 }

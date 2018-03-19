@@ -23,45 +23,50 @@ public class ViewPlaylist extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Playlist");
 
-        // Need to get intent from MoreInfo (via parcelable) and add to newly created arraylist
+        if (getIntent().getParcelableExtra("items") != null) {
+            // get parcelable extra data
 
-        Intent playListIntent = getIntent();
-        receive = playListIntent.getParcelableExtra("items");
+            // Need to get intent from MoreInfo (via parcelable) and add to newly created arraylist
 
-        int imageID = receive.getImageResourceId();
-        String mix = receive.getMixName();
-        String artist = receive.getArtistName();
+            Intent playListIntent = getIntent();
+            receive = playListIntent.getParcelableExtra("items");
 
-        /**
-         * Initialise global variable so that it takes data from intent and stores ---
-         *
-         */
-        GlobalClass globalvariable = (GlobalClass) getApplicationContext();
+            int imageID = receive.getImageResourceId();
+            String mix = receive.getMixName();
+            String artist = receive.getArtistName();
 
-        globalvariable.setImageIDToPlaylist(imageID);
-        globalvariable.setMixNameToPlaylist(mix);
-        globalvariable.setMixArtistToPlaylist(artist);
+            // Initialise global variable so that it takes data from intent and stores ---
+            GlobalClass globalvariable = (GlobalClass) getApplicationContext();
 
-        int globalImageID = globalvariable.getImageIDToPlaylist();
-        String globalMixName = globalvariable.getMixNameToPlaylist();
-        String globalArtistName = globalvariable.getMixArtistToPlaylist();
+            globalvariable.setImageIDToPlaylist(imageID);
+            globalvariable.setMixNameToPlaylist(mix);
+            globalvariable.setMixArtistToPlaylist(artist);
 
+            int globalImageID = globalvariable.getImageIDToPlaylist();
+            String globalMixName = globalvariable.getMixNameToPlaylist();
+            String globalArtistName = globalvariable.getMixArtistToPlaylist();
 
-        // Create an arraylist to receive items added to playlist from moreInfo activity
+            // Create an arraylist to receive items added to playlist from moreInfo activity
 
-        ArrayList<Mixes> addedToPlaylist = new ArrayList<>();
+            ArrayList<Mixes> addedToPlaylist = new ArrayList<>();
 
-        //Add received data to arraylist
-        addedToPlaylist.add(new Mixes(globalImageID, globalMixName, globalArtistName));
+            //Add received data to arraylist
+            addedToPlaylist.add(new Mixes(globalImageID, globalMixName, globalArtistName));
 
-        // also tried addedToPlaylist.add(new GlobalClass(globalImageID, globalMixName, globalArtistName));
-        // regardless, data is not persistent and errors on 'new GlobalClass' above
+            // also tried addedToPlaylist.add(new GlobalClass(globalImageID, globalMixName, globalArtistName));
+            // regardless, data is not persistent and errors on 'new GlobalClass' above
 
-        final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, addedToPlaylist);
+            final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, addedToPlaylist);
 
-        // Get a reference to the ListView, and attach the adapter to the listView.
-        ListView listView = (ListView) findViewById(R.id.playlist_view);
-        listView.setAdapter(playlistAdapter);
+            // Get a reference to the ListView, and attach the adapter to the listView.
+            ListView listView = (ListView) findViewById(R.id.playlist_view);
+            listView.setAdapter(playlistAdapter);
+
+        } else {
+            // processing when no extra data received
+            return;
+        }
+
 
         }
 
