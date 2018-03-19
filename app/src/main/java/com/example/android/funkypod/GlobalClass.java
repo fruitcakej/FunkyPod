@@ -24,8 +24,12 @@ public class GlobalClass extends Application{
     }
 
     public void addMixes(Mixes mix) {
+
+       if (mixes != null) {
         mixes = new ArrayList<>();
+        mixes.add(mix);
 }
+    }
 
     public String getMixNameToPlaylist() {
         return mixNameToPlaylist;
