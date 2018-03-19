@@ -19,11 +19,13 @@ public class GlobalClass extends Application{
     private int imageIDToPlaylist;
     private ArrayList<Mixes> mixes;
 
+    public ArrayList<Mixes> getMixes() {
+        return mixes;
+    }
+    
     public void addMixes(Mixes mix) {
         mixes = new ArrayList<>();
-
-    }
-
+}
 
     public String getMixNameToPlaylist() {
         return mixNameToPlaylist;
