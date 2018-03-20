@@ -28,6 +28,7 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
 
         /**
          * Get the selected intent via parcelable
+         * Null check not needed as can't get to this activity without sending data
          */
         Intent moreInfoIntent = getIntent();
         receive = moreInfoIntent.getParcelableExtra("items");
@@ -59,7 +60,7 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
 
     /**
      *
-     * OnClick to added selected info to new intent for viewPlaylist
+     * OnClick to add selected info to new intent for viewPlaylist
      */
 
     @Override
@@ -74,7 +75,6 @@ public class MoreInfo extends AppCompatActivity implements View.OnClickListener 
                 startActivity(playListIntent);
                 break;
     }
-
     }
 
     @Override

@@ -20,11 +20,15 @@ public class ViewPlaylist extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Playlist");
+        getData();
+
+    }
+
+    public void getData() {
 
         if (getIntent().getParcelableExtra("items") != null) {
             // get parcelable extra data
-
-            // Need to get intent from MoreInfo (via parcelable) and add to newly created arraylist
+            // Need to get intent from MoreInfo (via parcelable)
 
             Intent playListIntent = getIntent();
             receive = playListIntent.getParcelableExtra("items");
@@ -33,37 +37,25 @@ public class ViewPlaylist extends AppCompatActivity {
             String mix = receive.getMixName();
             String artist = receive.getArtistName();
 
-            // Initialise global variable so that it takes data from intent and stores ---
-            // Don't think I need this anymore
+            // Initialise global variable so that it takes data from intent and adds to global arraylist
 
-//            GlobalClass globalvariable = (GlobalClass) getApplicationContext();
-//
-//            globalvariable.setImageIDToPlaylist(imageID);
-//            globalvariable.setMixNameToPlaylist(mix);
-//            globalvariable.setMixArtistToPlaylist(artist);
-//
-//            int globalImageID = globalvariable.getImageIDToPlaylist();
-//            String globalMixName = globalvariable.getMixNameToPlaylist();
-//            String globalArtistName = globalvariable.getMixArtistToPlaylist();
+            GlobalClass globalvariable = (GlobalClass) getApplicationContext();
+            Mixes mixes = new Mixes(imageID, mix, artist);
 
+            globalvariable.addMixes(mixes);
 
-            // Playlist to store ViewPlaylist items now moved to GlobalClass so that it can persist.
+        }
 
-            final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, mixes);
+        GlobalClass globalvariable = (GlobalClass) getApplicationContext();
+
+        if (globalvariable.getMixes() != null) {
+            final PlaylistAdapter playlistAdapter = new PlaylistAdapter(this, globalvariable.getMixes());
 
             // Get a reference to the ListView, and attach the adapter to the listView.
             ListView listView = (ListView) findViewById(R.id.playlist_view);
             listView.setAdapter(playlistAdapter);
-
-
-
-
-        } else {
-            // processing when no extra data received
-            return;
         }
-
-        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -97,5 +89,4 @@ public class ViewPlaylist extends AppCompatActivity {
             menu.findItem(R.id.showPlaylistIcon).setVisible(false);
         return true;
     }
-
 }

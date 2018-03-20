@@ -98,7 +98,6 @@ public class Mixes implements Parcelable{
         return mImageResourceId;
     }
 
-
 }
 
 
